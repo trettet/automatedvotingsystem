@@ -1,2 +1,9 @@
-.idea/
+.idea/workspace.xml
+.idea/usagestatistics.xml
+.idea/tasks.xml
+
 target/
+
+# OS junk files
+[Tt]humbs.db
+*.DS_Store
