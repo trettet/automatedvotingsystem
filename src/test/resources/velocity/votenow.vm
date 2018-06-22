@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+    .card-deck {
+        margin-bottom: 2em;
+    }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4">Select Your Candidates Wisely</h1>
+		  <p class="lead">You may only select 1 president, 1 vice president, 5 senators, 4 representatitves, and 3 mayors.</p>
+		</div>
+		
+		<h2>President</h2>
+		<div class="row">
+            <div class="card-deck">
+                #foreach($candidate in $presidents)
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">$candidate.getName()</h5>
+                        <p class="card-text">$candidate.getParty().getName()</p>
+                        <a href="#" class="btn btn-primary">Vote</a>
+                      </div>
+                    </div>
+                #end
+            </div>
+		</div>
+
+		<h2>Vice-President</h2>
+		<div class="row">
+            <div class="card-deck">
+			<div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Nancy (Binay)</h5>
+			    <p class="card-text">Momoland</p>
+			    <a href="#" class="btn btn-primary">Vote</a>
+			  </div>
+			</div>
+			<div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Joshua Ty</h5>
+			    <p class="card-text">Sa Puso ni Jerly</p>
+			    <a href="#" class="btn btn-primary">Vote</a>
+			  </div>
+			</div>
+			<div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Jerly Palacio</h5>
+			    <p class="card-text">Sa Puso ni JTy</p>
+			    <a href="#" class="btn btn-primary">Vote</a>
+			  </div>
+			</div>
+            </div>
+		</div>
+
+		<h2>Senators</h2>
+		<div class="row">
+            <div class="card-deck">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Nancy (Binay)</h5>
+                    <p class="card-text">Momoland</p>
+                    <a href="#" class="btn btn-primary">Vote</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Joshua Ty</h5>
+                    <p class="card-text">Sa Puso ni Jerly</p>
+                    <a href="#" class="btn btn-primary">Vote</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Jerly Palacio</h5>
+                    <p class="card-text">Sa Puso ni JTy</p>
+                    <a href="#" class="btn btn-primary">Vote</a>
+                  </div>
+                </div>
+            </div>
+		</div>
+
+
+
+
+	</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+$('#login-modal').on('shown.bs.modal', function () {
+  $('#username').trigger('focus')
+})
+</script>
+</body>
+</html>

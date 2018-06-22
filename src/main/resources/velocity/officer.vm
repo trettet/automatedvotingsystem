@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4">Officer Portal</h1>
+		  <p class="lead">With great power comes great responsibility. - SpiderMan starring Toby Maguire</p>
+		</div>
+
+		<h2>controllers.Candidate List</h2>
+		<h3>President</h3>
+		<div class="row">
+			<div class='col'>
+			<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">First</th>
+			      <th scope="col">Last</th>
+			      <th scope="col">Nickname</th>
+			      <th>Operation</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Kirk Yngwie</td>
+			      <td>Enriquez</td>
+			      <td>Kirk</td>
+			      <td>
+			      	<button class='btn btn-success'>Update</button>
+			      	<button class='btn btn-danger'>Remove</button>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Zairiel</td>
+			      <td>Sorrowsad</td>
+			      <td>Weeaboo</td>
+			      <td>
+			      	<button class='btn btn-success'>Update</button>
+			      	<button class='btn btn-danger'>Remove</button>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>John Paul</td>
+			      <td>Hi Me</td>
+			      <td>@theSolitaryBird</td>
+			      <td>
+			      	<button class='btn btn-success'>Update</button>
+			      	<button class='btn btn-danger'>Remove</button>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		</div>
+
+	</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+$('#login-modal').on('shown.bs.modal', function () {
+  $('#username').trigger('focus')
+})
+</script>
+</body>
+</html>

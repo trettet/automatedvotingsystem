@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/aos.css" />
+    <style>
+    .card-deck {
+        margin-bottom: 2em;
+    }
+    .party {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 2px solid #505050;
+      margin-right: 5px;
+    }
+
+    .scrollable> .row {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Select Your Candidates Wisely</h1>
+        <p class="lead">You may only select 1 President, 1 Vice President, 5 Senators, 4 Representatives, 1 Governor and 1 Mayor.</p>
+    </div>
+
+    <h2>President</h2>
+    <div class="row" id="pres">
+        <div class="col">
+            <div class="card-deck">
+                #foreach($el in $presidents.keySet())
+                    <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">$presidents[$el].getName()</h5>
+                            <p class="card-text"><span class="party" style="background-color:$presidents[$el].getParty().getColor()"></span><span class="party-name">$presidents[$el].getParty().getName()</span></p>
+                            <button class="btn btn-primary btn-vote" data-type="president" data-index="$el">Vote</button>
+                        </div>
+                    </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <h2>Vice-President</h2>
+    <div class="row" id="vp">
+        <div class="col">
+            <div class="card-deck">
+                #foreach($el in $vicepresidents.keySet())
+                    <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">$vicepresidents[$el].getName()</h5>
+                            <p class="card-text"><span class="party" style="background-color:$vicepresidents[$el].getParty().getColor()"></span><span class="party-name">$vicepresidents[$el].getParty().getName()</span></p>
+                            <button class="btn btn-primary btn-vote" data-type="vp" data-index="$el">Vote</button>
+                        </div>
+                    </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <h2>Senators</h2>
+    <div class="row" id="sen">
+        <div class="col">
+            <div class="card-columns">
+                #foreach($el in $senators.keySet())
+                <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">$senators[$el].getName()</h5>
+                        <p class="card-text"><span class="party" style="background-color:$senators[$el].getParty().getColor()"></span><span class="party-name">$senators[$el].getParty().getName()</span></p>
+                        <button class="btn btn-primary btn-vote" data-type="sen" data-index="$el">Vote</button>
+                    </div>
+                </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <h2>District Representatives</h2>
+    <div class="row" id="rep">
+        <div class="col">
+            <div class="card-columns">
+                #foreach($el in $reps.keySet())
+                <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">$reps[$el].getName()</h5>
+                        <p class="card-text"><span class="party" style="background-color:$reps[$el].getParty().getColor()"></span><span class="party-name">$reps[$el].getParty().getName()</span></p>
+                        <button class="btn btn-primary btn-vote" data-type="rep" data-index="$el">Vote</button>
+                    </div>
+                </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <h2>Governor</h2>
+    <div class="row" id="gov">
+        <div class="col">
+            <div class="card-deck">
+                #foreach($el in $govs.keySet())
+                <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">$govs[$el].getName()</h5>
+                        <p class="card-text"><span class="party" style="background-color:$govs[$el].getParty().getColor()"></span><span class="party-name">$govs[$el].getParty().getName()</span></p>
+                        <button class="btn btn-primary btn-vote" data-type="gov" data-index="$el">Vote</button>
+                    </div>
+                </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <h2>Mayor</h2>
+    <div class="row" id="mayor">
+        <div class="col">
+            <div class="card-deck">
+                #foreach($el in $mayors.keySet())
+                <div data-aos="flip-left" data-aos-duration="600" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/placeholder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">$mayors[$el].getName()</h5>
+                        <p class="card-text"><span class="party" style="background-color:$mayors[$el].getParty().getColor()"></span><span class="party-name">$mayors[$el].getParty().getName()</span></p>
+                        <button class="btn btn-primary btn-vote" data-type="mayor" data-index="$el">Vote</button>
+                    </div>
+                </div>
+                #end
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col">
+            <button type="button" class="btn btn-success btn-lg btn-block" id="btn-cast">CAST YOUR VOTE</button>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+AOS.init();
+
+$('#login-modal').on('shown.bs.modal', function () {
+  $('#username').trigger('focus')
+})
+
+let pres = -1;
+let vp = -1;
+let noOfSen = 0;
+let noOfRep = 0;
+let sen = [];
+let rep = [];
+let gov = -1;
+let mayor = -1;
+
+function redBtn(btn)
+{
+    $(btn).text("Unvote");
+    $(btn).removeClass("btn-primary");
+    $(btn).addClass("btn-danger");
+}
+
+function bluBtn(btn)
+{
+    $(this).text("Vote");
+    $(this).addClass("btn-primary");
+    $(this).removeClass("btn-danger");
+}
+
+$(()=>{
+    $(".btn-vote").click(function() {
+        if ($(this).text() === "Vote") {
+            if ($(this).attr("data-type") === "president") {
+                if (pres != -1) {
+                    alert("You may only vote one President.");
+                } else {
+                    redBtn(this);
+                    pres = $(this).attr("data-index");
+                }
+            }else if ($(this).attr("data-type") === "vp") {
+                if(vp != -1) {
+                    alert("You may only vote one Vice President.");
+                } else {
+                    redBtn(this);
+                    vp = $(this).attr("data-index");
+                }
+            }else if ($(this).attr("data-type") === "sen") {
+                if(noOfSen + 1 > 5) {
+                    alert("You may only vote five Senators.");
+                } else {
+                    noOfSen++;
+                    redBtn(this);
+                    sen.push($(this).attr("data-index"));
+                }
+            }else if ($(this).attr("data-type") === "rep") {
+                 if(noOfRep + 1 > 4) {
+                     alert("You may only vote four District Representatives.");
+                 } else {
+                     noOfRep++;
+                     redBtn(this);
+                     rep.push($(this).attr("data-index"));
+                 }
+             } else if ($(this).attr("data-type") === "gov") {
+               if(gov != -1) {
+                   alert("You may only vote one Governor.");
+               } else {
+                   redBtn(this);
+                   gov = $(this).attr("data-index");
+               }
+            } else if ($(this).attr("data-type") === "mayor") {
+                 if(mayor != -1) {
+                     alert("You may only vote one Mayor.");
+                 } else {
+                     redBtn(this);
+                     mayor = $(this).attr("data-index");
+                 }
+              }
+        } else {
+            $(this).text("Vote");
+            $(this).addClass("btn-primary");
+            $(this).removeClass("btn-danger");
+
+            if ($(this).attr("data-type") === "president") {
+                pres = -1;
+                bluBtn(this);
+            } else if ($(this).attr("data-type") === "vp") {
+                vp = -1;
+                bluBtn(this);
+            } else if ($(this).attr("data-type") === "sen") {
+                let toRemove = Number($(this).attr("data-index"));
+                noOfSen -= 1;
+                sen = sen.filter(item => item !== toRemove);
+                bluBtn(this);
+            }else if ($(this).attr("data-type") === "rep") {
+                 let toRemove = Number($(this).attr("data-index"));
+                 noOfRep -= 1;
+                 rep = rep.filter(item => item !== toRemove);
+                 bluBtn(this);
+            }else if ($(this).attr("data-type") === "gov") {
+                  gov = -1;
+                  bluBtn(this);
+            } else if ($(this).attr("data-type") === "mayor") {
+                mayor = -1;
+                bluBtn(this);
+            }
+        }
+    });
+
+    $("#btn-cast").click(function() {
+        let buff;
+        let presName = $("#pres [data-index='" + pres + "']").siblings(".card-title").text();
+        let vpName = $("#vp [data-index='" + vp + "']").siblings(".card-title").text();
+
+        let senName = "";
+        sen.forEach(el => {
+            buff = ($("#sen [data-index='" + el + "']").siblings(".card-title").text());
+            senName += "  " + buff + "\n";
+        });
+
+        let repName = "";
+        rep.forEach(el => {
+            buff = ($("#rep [data-index='" + el + "']").siblings(".card-title").text());
+            repName += "  " + buff + "\n";
+        });
+
+        let govName = $("#gov [data-index='" + vp + "']").siblings(".card-title").text();
+        let mayorName = $("#mayor [data-index='" + vp + "']").siblings(".card-title").text();
+
+        let dia = confirm(`President: ${presName}\nVice-President: ${vpName}\nSenators:\n${senName}District Representatives:\n${repName}Governor: ${govName}\nMayor: ${mayorName}`);
+        if (dia) {
+            $.ajax({
+                url: "/processvote",
+                data: {
+                    'pres': pres,
+                    'vp': vp,
+                    'sen': JSON.stringify(sen),
+                    'rep' : JSON.stringify(rep),
+                    'gov': gov,
+                    'mayor': mayor
+                },
+                type: "POST",
+                success: function() {
+                    window.location.href = "/results";
+                }
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>

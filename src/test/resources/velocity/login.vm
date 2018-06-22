@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-4">Automated Voting System</h1>
+		  <p class="lead">This is an opportunity for each and every citizen in the country to try to make a difference. Please vote wisely! :)</p>
+		  <hr class="my-4">
+		  <p>Click this button to make a change.</p>
+		  <p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" id='btn-login' role="button" data-toggle="modal" data-target="#login-modal">Make a change</a>
+		  </p>
+		</div>
+		
+		<div class="modal fade" tabindex="-1" role="dialog" id='login-modal'>
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title">Login</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <form method="POST" action="auth">
+				  <div class="modal-body">
+				      #if ($resp && $resp == "INVALID")
+                          <div class="alert alert-danger" role="alert">
+                            Username or Password is incorrect, please try logging in again.
+                          </div>
+                      #end
+					  <div class="form-group">
+						<label>Username</label>
+						<input type="text" class="form-control" name="username" placeholder="Enter username">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					  </div>
+					  <div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Password">
+					  </div>
+				  </div>
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Login</button>
+				  </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+$('#login-modal').on('shown.bs.modal', function () {
+  $('#username').trigger('focus')
+})
+</script>
+</body>
+</html>
