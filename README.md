@@ -1,1 +1,1 @@
-"# Automated VOting System" 
+# Automated Voting System
